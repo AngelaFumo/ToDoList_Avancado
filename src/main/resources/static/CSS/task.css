@@ -1,0 +1,239 @@
+:root {
+    --primary: #7b2ff7;
+    --primary-gradient: linear-gradient(90deg, #7b2ff7, #f107a3);
+    --secondary: #9f6eff;
+    --success: #00c853;
+    --danger: #f44336;
+    --light-bg: #f7f8fc;
+    --card-bg: #f9f9ff;
+    --text-dark: #333;
+    --text-light: #888;
+    --border: #dcdcdc;
+    --white: #fff;
+  }
+  /* Barra Superior */
+.app-header {
+    background: var(--primary);
+    color: white;
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.menu-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+/* Menu Lateral */
+.sidebar {
+    position: fixed;
+    left: -250px;
+    top: 0;
+    height: 100vh;
+    width: 250px;
+    background: white;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+    transition: left 0.3s ease;
+    z-index: 1000;
+    padding-top: 4rem;
+}
+
+.sidebar.active {
+    left: 0;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar li a {
+    display: flex;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    color: var(--text-dark);
+    text-decoration: none;
+    border-left: 4px solid transparent;
+    transition: all 0.3s;
+}
+
+.sidebar li a:hover {
+    background: var(--light-bg);
+    border-left: 4px solid var(--primary);
+}
+
+.sidebar .icon {
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+/* Overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 999;
+    display: none;
+}
+
+body.tarefas-body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #f7f8fc;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 5px 15px rgba(170, 137, 255, 0.2);
+}
+
+.titulo {
+    text-align: center;
+    font-size: 2.2rem;
+    color: #7b2ff7;
+    margin-bottom: 0.3rem;
+}
+
+.subtitulo {
+    text-align: center;
+    color: #888;
+    margin-bottom: 1.5rem;
+}
+
+.form-tarefa form {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.form-tarefa input {
+    flex: 1;
+    padding: 0.8rem;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+
+.form-tarefa button {
+    background: linear-gradient(90deg, #7b2ff7, #f107a3);
+    border: none;
+    color: white;
+    padding: 0.8rem 1rem;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.filtros {
+    text-align: center;
+    margin: 1rem 0;
+}
+
+.filtros button {
+    padding: 0.5rem 1.2rem;
+    margin: 0 0.3rem;
+    border: none;
+    border-radius: 6px;
+    background: #f1f3f5;
+    cursor: pointer;
+}
+
+.resumo {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    gap: 1rem;
+}
+
+.card {
+    flex: 1;
+    background: #f9f9ff;
+    border-radius: 10px;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.card.total {
+    border-left: 4px solid #9f6eff;
+}
+.card.pendentes {
+    border-left: 4px solid #4285f4;
+}
+.card.concluidas {
+    border-left: 4px solid #00c853;
+}
+
+.lista {
+    margin-top: 2rem;
+}
+
+.item-tarefa {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #f4f5fb;
+    border-radius: 10px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.icone-status {
+    margin-right: 1rem;
+}
+
+.icone.verde {
+    color: #00c853;
+    font-size: 1.2rem;
+}
+
+.icone.cinza {
+    color: #ccc;
+    font-size: 1rem;
+}
+
+.riscado {
+    text-decoration: line-through;
+    color: #00c853;
+    font-weight: bold;
+}
+
+.acoes form {
+    display: inline;
+}
+
+.btn-acoes {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin-left: 0.5rem;
+}
+
+.btn-acoes.verde {
+    color: #00c853;
+}
+
+.btn-acoes.vermelho {
+    color: #f44336;
+}
+ 
+

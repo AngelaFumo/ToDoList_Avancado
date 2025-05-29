@@ -1,0 +1,104 @@
+:root {
+  --primary: #7b2ff7;
+  --primary-gradient: linear-gradient(90deg, #7b2ff7, #f107a3);
+  --secondary: #9f6eff;
+  --success: #00c853;
+  --danger: #f44336;
+  --light-bg: #f7f8fc;
+  --card-bg: #f9f9ff;
+  --text-dark: #333;
+  --text-light: #888;
+  --border: #dcdcdc;
+  --white: #fff;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--primary-gradient);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.ia-container {
+  background: white;
+  width: 90%;
+  max-width: 500px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.ia-header {
+  background: var(--primary);
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.ia-chat {
+  flex: 1;
+  padding: 15px;
+  overflow-y: auto;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.msg {
+  padding: 12px 15px;
+  border-radius: 20px;
+  max-width: 80%;
+}
+
+.msg.bot {
+  background-color: #ecf0f1;
+  align-self: flex-start;
+}
+
+.msg.user {
+  background-color: #3498db;
+  color: white;
+  align-self: flex-end;
+}
+
+.ia-input {
+  display: flex;
+  border-top: 1px solid #ccc;
+  padding: 10px;
+}
+
+.ia-input input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+  outline: none;
+  font-size: 16px;
+  margin-right: 10px;
+  background: var(--primary);
+}
+
+.ia-input button {
+  background: #3498db;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.ia-input button:hover {
+  background: #2980b9;
+}

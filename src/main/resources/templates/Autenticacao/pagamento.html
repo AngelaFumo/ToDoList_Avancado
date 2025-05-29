@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tela de Pagamento</title>
+  <link rel="stylesheet" href="../../static/CSS/pagamento.css">
+</head>
+<body>
+<div class="payment-container">
+  <div class="payment-header">
+    <h1>Realizar Pagamento</h1>
+    <div class="payment-amount">conta</div>
+  </div>
+
+  <div class="payment-methods">
+    <div class="method" data-method="emola">
+      <div class="method-icon">
+         <img src="../fotos/unnamed.png" alt="Cartão" />
+        <i class="fas fa-mobile-alt"></i>
+      </div>
+      <div class="method-info">
+        <h3>E-mola</h3>
+        <p>Pague usando sua conta E-mola</p>
+      </div>
+    </div>
+
+    <div class="method" data-method="mpesa">
+      <div class="method-icon">
+         <img src="../fotos/M-pesa-logo.png" alt="Cartão" />
+        <i class="fas fa-money-bill-wave"></i>
+      </div>
+      <div class="method-info">
+        <h3>M-pesa</h3>
+        <p>Pague usando M-pesa</p>
+      </div>
+    </div>
+
+    <div class="method" data-method="card">
+      <div class="method-icon">
+         <img src="../fotos/cartao.png" alt="Cartão" />
+        <i class="far fa-credit-card"></i>
+      </div>
+      <div class="method-info">
+        <h3>Cartão de Crédito/Débito</h3>
+        <p>Pague com Visa, Mastercard ou outros</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="emola-details" class="payment-details">
+    <div class="form-group">
+      <label for="emola-phone">Número de Telefone</label>
+      <input type="tel" id="emola-phone" placeholder="84 123 4567">
+    </div>
+    <button class="pay-button" onclick="processPayment('emola')">Pagar com E-mola</button>
+  </div>
+
+  <div id="mpesa-details" class="payment-details">
+    <div class="form-group">
+      <label for="mpesa-phone">Número de Telefone</label>
+      <input type="tel" id="mpesa-phone" placeholder="84 123 4567">
+    </div>
+    <button class="pay-button" onclick="processPayment('mpesa')">Pagar com M-pesa</button>
+  </div>
+
+  <div id="card-details" class="payment-details">
+    <div class="form-group">
+      <label for="card-number">Número do Cartão</label>
+      <input type="text" id="card-number" placeholder="1234 5678 9012 3456">
+    </div>
+    <div class="form-group">
+      <label for="card-name">Nome no Cartão</label>
+      <input type="text" id="card-name" placeholder="João B. Silva">
+    </div>
+    <div style="display: flex; gap: 15px;">
+      <div class="form-group" style="flex: 1;">
+        <label for="card-expiry">Validade</label>
+        <input type="text" id="card-expiry" placeholder="MM/AA">
+      </div>
+      <div class="form-group" style="flex: 1;">
+        <label for="card-cvv">CVV</label>
+        <input type="text" id="card-cvv" placeholder="123">
+      </div>
+    </div>
+    <button class="pay-button" onclick="processPayment('card')">Pagar com Cartão</button>
+  </div>
+
+  <div class="payment-success" id="payment-success">
+    <i class="fas fa-check-circle"></i>
+    <h2>Pagamento Concluído!</h2>
+    <p>O seu pagamento foi processado com sucesso.</p>
+    <p>Obrigado pela sua compra!</p>
+  </div>
+</div>
+
+<script src="../../static/JS/pagamento.js"></script>
+</body>
+</html>

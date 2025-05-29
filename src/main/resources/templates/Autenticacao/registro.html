@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro - Minhas Tarefas</title>
+  <link rel="stylesheet" th:href="@{/css/style.css}">
+  <link rel="stylesheet" th:href="@{/CSS/registro.css}">
+  <link rel="stylesheet" th:href="@{/CSS/index.css}">
+  
+</head>
+<body class="login-body">
+<div class="login-container">
+  <h2>Cadastro</h2>
+  <p class="subtitulo">Crie sua conta e comece a organizar!</p>
+
+  <div th:if="${param.error}" class="erro-login">
+    Ocorreu um erro ao criar sua conta. Tente novamente.
+  </div>
+
+  <form th:action="@{/register}" method="post" id="registerForm">
+    <input type="text" name="username" placeholder="Usuário" required>
+    <input type="email" name="email" placeholder="E-mail" required>
+    <input type="password" name="password" placeholder="Senha" required>
+    <input type="password" name="confirmPassword" placeholder="Confirme a Senha" required>
+    <button type="submit">Cadastrar</button>
+  </form>
+
+  <p class="registro">Já tem uma conta? <a href="/Login">Faça login</a></p>
+</div>
+
+<script th:src="@{/js/register.js}"></script>
+<script th:src="@{/JS/registro.js}"></script>
+</body>
+</html>

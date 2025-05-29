@@ -1,0 +1,76 @@
+:root {
+    --primary: #7b2ff7;
+    --primary-gradient: linear-gradient(90deg, #7b2ff7, #f107a3);
+    --secondary: #9f6eff;
+    --success: #00c853;
+    --danger: #f44336;
+    --light-bg: #f7f8fc;
+    --card-bg: #f9f9ff;
+    --text-dark: #333;
+    --text-light: #888;
+    --border: #dcdcdc;
+    --white: #fff;
+  }
+body.login-body {
+    background: var(--primary-gradient);
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-container {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 10px rgba(166, 141, 229, 0.2);
+    width: 350px;
+    text-align: center;
+}
+
+.login-container h2 {
+    color: var(--primary);
+    margin-bottom: 0.2rem;
+}
+
+.subtitulo {
+    color: #8e8e8e;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+}
+
+.login-container input {
+    width: 100%;
+    padding: 0.75rem;
+    margin: 0.5rem 0;
+    border: 1px solid #dcdcdc;
+    border-radius: 8px;
+}
+
+.login-container button {
+    width: 100%;
+    padding: 0.75rem;
+    margin-top: 1rem;
+    background: var(--primary-gradient);
+    border: none;
+    color: white;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.login-container button:hover {
+    opacity: 0.9;
+}
+
+.registro {
+    margin-top: 1rem;
+    font-size: 0.85rem;
+}
+
+.registro a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: bold;
+}

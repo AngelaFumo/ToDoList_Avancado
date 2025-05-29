@@ -1,0 +1,61 @@
+:root {
+  /* Cores principais */
+  --primary: #7b2ff7;
+  --primary-gradient: linear-gradient(90deg, #7b2ff7, #f107a3);
+  --secondary: #9f6eff;
+  --success: #00c853;
+  --info: #4285f4;
+  --danger: #f44336;
+  
+  /* Tons de cinza */
+  --light-bg: #f7f8fc;
+  --card-bg: #f9f9ff;
+  --border: #dcdcdc;
+  --text-dark: #333;
+  --text-medium: #555;
+  --text-light: #888;
+  --white: #fff;
+  
+  /* Efeitos */
+  --shadow: 0 5px 15px rgba(170, 137, 255, 0.2);
+}
+
+/* Estilos base */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--light-bg);
+  color: var(--text-dark);
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: var(--white);
+  border-radius: 1rem;
+  box-shadow: var(--shadow);
+}
+
+.btn-primary {
+  background: var(--primary-gradient);
+  color: var(--white);
+  border: none;
+  border-radius: 10px;
+  padding: 0.8rem 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}

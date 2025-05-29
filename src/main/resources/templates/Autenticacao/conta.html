@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Perfil - To-Do App</title>
+    <link rel="stylesheet" th:href="@{/css/perfil.css}">
+    <script defer th:src="@{/js/perfil.js}"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../../static/CSS/conta.css">
+</head>
+<body>
+<div class="profile-container">
+    <div class="profile-header">
+        <div class="profile-picture">
+            <img src="../fotos/icon.avif"
+                    th:src="${#strings.isEmpty(usuario.foto)} ? @{/img/perfil.png} : @{${usuario.foto}}" alt="Foto de perfil">
+
+        </div>
+        <h1 class="profile-name" th:text="${usuario.nome}">Usuário</h1>
+        <p class="profile-email" th:text="${usuario.email}">email@exemplo.com</p>
+    </div>
+
+    <div class="stats-container">
+        <div class="stat-item">
+            <div class="stat-number" th:text="${stats.total}">0</div>
+            <div class="stat-label">Tarefas</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number" th:text="${stats.concluidas}">0</div>
+            <div class="stat-label">Concluídas</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number" th:text="${stats.pendentes}">0</div>
+            <div class="stat-label">Pendentes</div>
+        </div>
+    </div>
+
+    <div class="todo-stats">
+        <h3>Estatísticas das Tarefas</h3>
+        <div class="todo-stat-item">
+            <span>Taxa de conclusão</span>
+            <span th:text="${stats.taxaConclusao + '%'}">0%</span>
+        </div>
+        <div class="stat-bar">
+            <div class="stat-progress" th:style="'width:' + ${stats.taxaConclusao} + '%'"></div>
+        </div>
+        <div class="todo-stat-item">
+            <span>Tarefas hoje</span>
+            <span th:text="${stats.hoje}">0</span>
+        </div>
+        <div class="todo-stat-item">
+            <span>Tarefas atrasadas</span>
+            <span th:text="${stats.atrasadas}">0</span>
+        </div>
+    </div>
+
+    <div class="profile-actions">
+        <button class="action-btn edit-btn" id="editProfileBtn">
+            <i class="fas fa-user-edit"></i> Alterar Perfil
+        </button>
+        <a href="../index.html" class="action-btn logout-btn">
+            <i class="fas fa-sign-out-alt"></i> Sair
+        </a>
+    </div>
+</div>
+<script src="../../static/JS/conta.js"></script>
+</body>
+</html>

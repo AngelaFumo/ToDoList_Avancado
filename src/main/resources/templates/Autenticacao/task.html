@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Minhas Tarefas</title>
+  <link rel="stylesheet" href="../../static/CSS/task.css">
+</head>
+<body class="tarefas-body">
+  <!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" th:href="@{/CSS/global.css}">
+    <link rel="stylesheet" th:href="@{/CSS/task.css}">
+</head>
+<body class="tarefas-body">
+    <header class="app-header">
+        <div class="header-left">
+            <button class="menu-btn" id="menuBtn">☰</button>  
+        </div>
+    </header>
+
+    <div class="app-container">
+        <aside class="sidebar" id="sidebar">
+            <nav>
+                <ul>
+                    <li><a th:href="@{/Autenticacao/conta}"><i class="icon">👤</i> Informações de Conta</a></li>
+                    <li><a th:href="@{/Autenticacao/IA}"><i class="icon">🤖</i> Falar com IA</a></li>
+                    <li><a th:href="@{/Autenticacao/Pagamentos}"><i class="icon">💳</i> Pagamentos</a></li>
+                    <li><a th:href="@{/Autenticacao/Ajuda}"><i class="icon">❓</i> Ajuda</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Conteúdo Existente (Focus Mode + Tarefas) -->
+        <main class="main-content">
+            <!-- ... seu conteúdo atual de tarefas ... -->
+        </main>
+    </div>
+
+    <script th:src="@{/JS/task.js}"></script>
+</body>
+</html>
+
+<div class="container">
+
+  <h1 class="titulo">Minhas Tarefas</h1>
+  <p class="subtitulo">Organize seu dia com estilo ✨</p>
+
+  <!-- Formulário de adicionar tarefa -->
+  <div class="form-tarefa">
+    <form th:action="@{/tarefas/adicionar}" method="post">
+      <input type="text" name="descricao" placeholder="Adicione uma nova tarefa..." required>
+      <button type="submit">+ Adicionar</button>
+    </form>
+  </div>
+
+  <!-- Filtros -->
+  <div class="filtros">
+    <button onclick="filtrar('todas')">Todas</button>
+    <button onclick="filtrar('pendentes')">Pendentes</button>
+    <button onclick="filtrar('concluidas')">Concluídas</button>
+  </div>
+
+  <!-- Resumo -->
+  <div class="resumo">
+    <div class="card total">
+      <p>Total de Tarefas</p>
+      <h3 th:text="${total}">0</h3>
+    </div>
+    <div class="card pendentes">
+      <p>Pendentes</p>
+      <h3 th:text="${pendentes}">0</h3>
+    </div>
+    <div class="card concluidas">
+      <p>Concluídas</p>
+      <h3 th:text="${concluidas}">0</h3>
+    </div>
+  </div>
+
+  <!-- Lista de tarefas -->
+  <div class="lista">
+    <div class="item-tarefa" th:each="tarefa : ${tarefas}"
+         th:classappend="${tarefa.concluida} ? 'concluida' : 'pendente'"
+         th:data-status="${tarefa.concluida} ? 'concluidas' : 'pendentes'">
+
+      <div class="icone-status">
+        <span th:if="${tarefa.concluida}" class="icone verde">✔</span>
+        <span th:if="${!tarefa.concluida}" class="icone cinza">⬤</span>
+      </div>
+
+      <div class="conteudo">
+        <p th:text="${tarefa.descricao}" th:classappend="${tarefa.concluida} ? 'riscado' : ''"></p>
+        <small th:text="'Adicionado em ' + ${#dates.format(tarefa.dataCriacao, 'dd/MM/yyyy, HH:mm:ss')}"></small>
+      </div>
+
+      <div class="acoes">
+        <form th:action="@{/tarefas/concluir/{id}(id=${tarefa.id})}" method="post" th:if="${!tarefa.concluida}">
+          <button class="btn-acoes verde" title="Concluir">✔</button>
+        </form>
+        <form th:action="@{/tarefas/deletar/{id}(id=${tarefa.id})}" method="post">
+          <button class="btn-acoes vermelho" title="Excluir">🗑</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+
+<script src="../../static/JS/task.js"></script>
+</body>
+</html>

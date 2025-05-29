@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assistente IA</title>
+    <link rel="stylesheet" th:href="@{/CSS/IntegrarIA.css}">
+
+</head>
+<body>
+<div class="ia-container">
+    <div class="ia-header">
+        <h1>🤖 Assistente Inteligente</h1>
+        <p>Como posso te ajudar hoje?</p>
+    </div>
+
+    <div class="ia-chat" id="chat-box">
+        <div class="msg bot">Olá! Sou sua assistente virtual. Pergunte algo.</div>
+    </div>
+
+    <form class="ia-input" id="form">
+        <input
+                type="text"
+                id="user-input"
+                placeholder="Digite sua pergunta..."
+                autocomplete="off"
+                required
+        />
+        <button type="submit">Enviar</button>
+    </form>
+</div>
+
+<script th:src="@{JS/IntegrarIA.js}"></script>
+</body>
+</html>

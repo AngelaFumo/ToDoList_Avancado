@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Login - Minhas Tarefas</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" th:href="@{../CSS/index.css}">
+</head>
+<body class="login-body">
+<div class="login-container">
+    <h2>Minhas Tarefas</h2>
+    <p class="subtitulo">Organize seu dia com estilo ✨</p>
+    <form th:action="@{/login}" method="post">
+        <input type="text" name="username" placeholder="E-mail" required>
+        <input type="password" name="password" placeholder="Senha" required>
+        <button type="submit">Entrar</button>
+    </form>
+    <p class="registro">Não tem uma conta? <a th:href="@{Autenticacao/registros}">Cadastre-se</a></p>
+</div>
+</body>
+</html>
